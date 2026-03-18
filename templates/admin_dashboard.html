@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,10 @@
 <body>
     <header class="header">
         <div class="container header-content">
-            <a href="/" class="logo">Макс<span>Чан</span></a>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="logo-mch">МЧ</div>
+                <a href="/" class="logo">Макс<span>Чан</span></a>
+            </div>
             <nav class="nav">
                 <a href="/">На сайт</a>
                 <a href="/admin/dashboard">Админка</a>
@@ -49,7 +52,7 @@
                         <td>{{.ID}}</td>
                         <td><img src="{{.ImageURL}}" style="width: 80px; height: 60px; object-fit: cover; border-radius: 8px;"></td>
                         <td>{{.Name}}</td>
-                        <td>{{.Price}} ₽</td>
+                        <td>{{.Price}} </td>
                         <td>
                             <a href="/admin/edit/{{.ID}}" class="btn" style="padding: 8px 16px;"> Редакт.</a>
                             <a href="/admin/delete/{{.ID}}" class="btn btn-outline" style="padding: 8px 16px;" onclick="return confirm('Удалить этот чан?')"> Удалить</a>
