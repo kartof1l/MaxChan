@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МаксЧан - Сибирские банные чаны</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo">Макс<span>Чан</span></a>
+            <nav class="nav">
+                <a href="/">Главная</a>
+                <a href="/#products">Чаны</a>
+                <a href="/support">Поддержка</a>
+                {{if .IsAdmin}}
+                    <a href="/admin/dashboard">Админка</a>
+                    <a href="/admin/logout">Выйти</a>
+                {{end}}
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div>
+                <h1>Сибирские банные чаны ручной работы</h1>
+                <p>Настоящий сибирский металл, морозостойкость до -50C, доставка по Красноярскому краю</p>
+                <a href="#products" class="btn">Смотреть чаны</a>
+                <a href="/support" class="btn btn-outline" style="margin-left: 15px;">Контакты</a>
+            </div>
+            <div>
+                <img src="/static/images/hero.jpg" alt="Сибирский чан" style="width:100%; border-radius:30px;">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 style="font-size: 36px; color: #1a4d4e; margin-bottom: 20px;" id="products">Наши чаны</h2>
+        
+        <div class="products-grid">
+            {{range .Products}}
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{{.ImageURL}}" alt="{{.Name}}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\'><rect width=\'300\' height=\'200\' fill=\'%23eef5f5\'/><text x=\'150\' y=\'100\' font-family=\'Inter\' font-size=\'16\' fill=\'%231a4d4e\' text-anchor=\'middle\'>{{.Name}}</text></svg>'">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">{{.Name}}</h3>
+                    <p class="product-description">{{.Description}}</p>
+                    <div class="product-price">{{.Price}} ₽</div>
+                    <a href="/product/{{.ID}}" class="btn">Подробнее</a>
+                </div>
+            </div>
+            {{else}}
+            <div style="grid-column: 1/-1; text-align: center; padding: 60px;">
+                <h3>Скоро здесь появятся наши чаны</h3>
+                <p>Следите за обновлениями</p>
+            </div>
+            {{end}}
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>МаксЧан</h3>
+                    <p>Сибирские банные чаны под заказ.</p>
+                </div>
+                <div>
+                    <h3>Контакты</h3>
+                    <p> +7 (999) XXXXXXXXX</p>
+                    <p> info@maxchan.ru</p>
+                    <p> Красноярск, Россия</p>
+                </div>
+                <div>
+                    <h3>Режим работы</h3>
+                    <p>Ежедневно с 0:00 до 24:00</p>
+                    <p>Без выходных</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p> 2026 МаксЧан. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

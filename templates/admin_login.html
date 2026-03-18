@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МаксЧан - Вход для администратора</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo">Макс<span>Чан</span></a>
+        </div>
+    </header>
+
+    <div class="container" style="max-width: 400px; margin: 100px auto;">
+        <div style="background: white; padding: 40px; border-radius: 30px; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);">
+            <h1 style="color: #1a4d4e; margin-bottom: 30px; text-align: center;">Вход в админ панель</h1>
+            
+            {{if .Error}}
+            <div style="background: #fee; color: #c00; padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                {{.Error}}
+            </div>
+            {{end}}
+            
+            <form method="POST" action="/admin/login" class="admin-form">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Пароль" required>
+                <button type="submit" class="btn" style="width: 100%;">Войти</button>
+            </form>
+            
+            <p style="text-align: center; margin-top: 20px; color: #5a6e6f;">
+                admin@maxchan.ru / admin123
+            </p>
+        </div>
+    </div>
+</body>
+</html>

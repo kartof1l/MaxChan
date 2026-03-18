@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МаксЧан - Поддержка</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo">Макс<span>Чан</span></a>
+            <nav class="nav">
+                <a href="/">Главная</a>
+                <a href="/#products">Чаны</a>
+                <a href="/support">Поддержка</a>
+                {{if .IsAdmin}}
+                    <a href="/admin/dashboard">Админка</a>
+                {{end}}
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 style="font-size: 48px; color: #1a4d4e; margin: 40px 0;">Поддержка</h1>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+            <div style="background: white; padding: 40px; border-radius: 30px;">
+                <h2 style="color: #1a4d4e; margin-bottom: 20px;">Связаться с нами</h2>
+                
+                <div class="contact-item">
+                    <span style="font-size: 24px;"></span>
+                    <div>
+                        <strong>Телефон</strong><br>
+                        <a href="tel:+79991234567" style="color: #2e8b8a; text-decoration: none;">+7 (999) 123-45-67</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <span style="font-size: 24px;"></span>
+                    <div>
+                        <strong>WhatsApp / Telegram</strong><br>
+                        <a href="https://wa.me/79991234567" style="color: #2e8b8a; text-decoration: none;">+7 (999) 123-45-67</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <span style="font-size: 24px;"></span>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:support@maxchan.ru" style="color: #2e8b8a; text-decoration: none;">support@maxchan.ru</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <span style="font-size: 24px;"></span>
+                    <div>
+                        <strong>Адрес</strong><br>
+                        <span>Алтай, Россия (производство)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: white; padding: 40px; border-radius: 30px;">
+                <h2 style="color: #1a4d4e; margin-bottom: 20px;">Режим работы</h2>
+                
+                <div style="margin-bottom: 30px;">
+                    <p><strong>Ежедневно:</strong> 9:00 - 21:00</p>
+                    <p><strong>Без выходных</strong></p>
+                </div>
+                
+                <h3 style="color: #1a4d4e; margin: 20px 0;">Как добраться</h3>
+                <p style="color: #5a6e6f; line-height: 1.7;">
+                    Мы находимся в живописном месте Алтая. Для посещения производства свяжитесь с нами заранее.
+                </p>
+            </div>
+        </div>
+        
+        <div style="margin: 40px 0;">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=86.084686%2C51.805362&z=10" 
+                    style="width: 100%; height: 400px; border: none; border-radius: 30px;"></iframe>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>МаксЧан</h3>
+                    <p>Сибирские банные чаны под заказ.</p>
+                </div>
+                <div>
+                    <h3>Контакты</h3>
+                    <p> +7 (999) XXXXXXXXX</p>
+                    <p> info@maxchan.ru</p>
+                    <p> Красноярск, Россия</p>
+                </div>
+                <div>
+                    <h3>Режим работы</h3>
+                    <p>Ежедневно с 0:00 до 24:00</p>
+                    <p>Без выходных</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p> 2026 МаксЧан. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
